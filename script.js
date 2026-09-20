@@ -1,2 +1,42 @@
-const visual=document.querySelector('.visual');const codePanel=document.querySelector('.visual .code');const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;if(visual&&codePanel&&!reducedMotion){visual.addEventListener('pointermove',event=>{if(event.pointerType==='touch')return;const bounds=visual.getBoundingClientRect();const x=(event.clientX-bounds.left)/bounds.width-.5;const y=(event.clientY-bounds.top)/bounds.height-.5;codePanel.style.transform=`rotate(${2+x*3}deg) translate(${x*6}px,${y*6}px) translateZ(28px)`});visual.addEventListener('pointerleave',()=>{codePanel.style.transform='rotate(2deg) translateZ(20px)'})}
-const items=document.querySelectorAll('.grid article,.project,.timeline article,.edu article');const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';observer.unobserve(e.target)}}),{threshold:.08});items.forEach(x=>{x.style.opacity='0';x.style.transform='translateY(16px)';x.style.transition='opacity .6s ease,transform .6s ease';observer.observe(x)});
+(function () {
+  var drawer = document.getElementById("nav-drawer");
+  if (!drawer) return;
+
+  var toggle = drawer.querySelector(".menu-toggle");
+  var overlay = drawer.querySelector(".nav-overlay");
+  var links = drawer.querySelectorAll("#mobile-nav a");
+
+  function syncExpanded() {
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", drawer.open ? "true" : "false");
+    }
+    var lock = drawer.open && window.matchMedia("(max-width: 767px)").matches;
+    document.body.style.overflow = lock ? "hidden" : "";
+  }
+
+  function closeDrawer() {
+    if (drawer.open) {
+      drawer.open = false;
+    }
+    syncExpanded();
+  }
+
+  drawer.addEventListener("toggle", syncExpanded);
+  window.addEventListener("resize", syncExpanded);
+  syncExpanded();
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && drawer.open) {
+      closeDrawer();
+      if (toggle) toggle.focus();
+    }
+  });
+
+  if (overlay) {
+    overlay.addEventListener("click", closeDrawer);
+  }
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", closeDrawer);
+  }
+})();
