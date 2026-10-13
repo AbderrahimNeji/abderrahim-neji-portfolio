@@ -1,6 +1,7 @@
 # Abderrahim Neji — portfolio
 
-Static internship portfolio for software, data, and AI/ML systems work.
+Dark, animated internship portfolio for software, data, and AI/ML systems work.
+Vanilla HTML, CSS, and JavaScript — GitHub Pages from `main/`.
 
 ## Run locally
 
