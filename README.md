@@ -1,9 +1,25 @@
-# Abderrahim Neji Portfolio
+# Abderrahim Neji — portfolio
 
-Responsive personal portfolio focused on AI/ML, RAG/LLM, MLOps, Data Engineering and backend engineering.
+Static internship portfolio for software, data, and AI/ML systems work.
 
-## Run
-Open `index.html` in a browser.
+## Run locally
+
+Open `index.html` in a browser, or from this folder:
+
+```bash
+python3 -m http.server 4173
+```
+
+Then visit http://localhost:4173/
+
+## Checks
+
+```bash
+node check.mjs
+```
 
 ## Deploy
-Upload the three files to GitHub Pages, or import the folder/repository into Vercel.
+
+GitHub Pages serves the repository root on `main`
+(`https://abderrahimneji.github.io/abderrahim-neji-portfolio/`).
+Asset paths are relative, so the project-pages base path works without a bundler.
