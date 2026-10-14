@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 
 const html = readFileSync("index.html", "utf8");
 const css = readFileSync("style.css", "utf8");
@@ -8,6 +8,9 @@ const required = [
   "Abderrahim Neji",
   "Explore projects",
   "Software &amp; Data Engineering student focused on",
+  "Software &amp; Data Engineering |",
+  "AI/ML Engineer",
+  "I build intelligent applications combining machine learning, computer vision, and LLM-powered systems",
   "ZUPdeCO",
   "classification-pytorch",
   "OliveGrove_IOT",
@@ -27,6 +30,10 @@ const required = [
   "Aymen Jeddou",
   "Mohamed Amine Trabelsi",
   "besmaguesmi",
+  "assets/portrait.jpg",
+  "Photograph of Abderrahim Neji",
+  "hero-layout",
+  "hero-portrait",
 ];
 
 const missing = required.filter((item) => !html.includes(item) && !css.includes(item));
@@ -76,6 +83,31 @@ if (!html.includes("<dialog")) {
 }
 if (!js.includes("showModal")) {
   errors.push("script.js must open dialogs with showModal");
+}
+if (!css.includes("object-fit: cover") && !css.includes("object-fit:cover")) {
+  errors.push("Portrait must use object-fit: cover");
+}
+if (!css.includes("object-position")) {
+  errors.push("Portrait must set object-position");
+}
+if (!css.includes("prefers-reduced-motion")) {
+  errors.push("CSS must honor prefers-reduced-motion");
+}
+
+const portrait = "assets/portrait.jpg";
+const source = "assets/portrait-source.jpg";
+if (!existsSync(portrait) || !existsSync(source)) {
+  errors.push("Missing portrait.jpg and/or portrait-source.jpg");
+} else {
+  const edited = statSync(portrait).size;
+  const original = statSync(source).size;
+  if (edited < 8_000 || original < 8_000) {
+    errors.push("Portrait files look empty or too small");
+  }
+}
+
+if (html.includes('src="/assets/') || html.includes('href="/style.css"') || html.includes('src="/script.js"')) {
+  errors.push("Asset paths must be relative for GitHub Pages at /abderrahim-neji-portfolio/");
 }
 
 if (errors.length) {

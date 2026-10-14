@@ -249,9 +249,10 @@
       links = [];
       particles = [];
       var i;
+      var xSpan = mobileMq.matches ? w : w * 0.64;
       for (i = 0; i < n; i++) {
         nodes.push({
-          x: Math.random() * w,
+          x: Math.random() * xSpan,
           y: Math.random() * h,
           ox: 0,
           oy: 0,

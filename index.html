@@ -6,10 +6,13 @@
   <meta name="theme-color" content="#06080F">
   <meta name="color-scheme" content="dark">
   <meta name="description" content="Abderrahim Neji — Software &amp; Data Engineering student focused on AI/ML systems. Retrieval assistants, ML pipelines, and APIs that connect models to applications.">
-  <meta property="og:title" content="Abderrahim Neji — Software &amp; Data Engineering | AI/ML Systems">
+  <meta property="og:title" content="Abderrahim Neji — Software &amp; Data Engineering | AI/ML Engineer">
   <meta property="og:description" content="Software &amp; Data Engineering student focused on AI/ML systems — RAG, MLOps, and backend applications.">
   <meta property="og:type" content="website">
-  <title>Abderrahim Neji — Software &amp; Data Engineering | AI/ML Systems</title>
+  <meta property="og:image" content="https://abderrahimneji.github.io/abderrahim-neji-portfolio/assets/portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://abderrahimneji.github.io/abderrahim-neji-portfolio/assets/portrait.jpg">
+  <title>Abderrahim Neji — Software &amp; Data Engineering | AI/ML Engineer</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -84,21 +87,40 @@
         </g>
       </svg>
 
-      <div class="wrap hero-inner">
-        <p class="availability hero-stage">Open to internships</p>
-        <p class="eyebrow hero-stage">University of Carthage · FSB · 5th year</p>
-        <h1 id="hero-title" class="hero-stage">Abderrahim Neji</h1>
-        <p class="headline hero-stage">Software &amp; Data Engineering student focused on <span class="accent-word">AI/ML systems</span></p>
-        <p class="lead hero-stage">I build systems that connect data, models, and software — a NestJS/Gemini retrieval assistant, PyTorch training with MLflow and DVC, and APIs that take sensors or documents and return a usable result.</p>
-        <div class="actions hero-stage">
-          <a class="btn btn-primary magnetic" href="#projects"><span>Explore projects</span></a>
-          <a class="btn btn-ghost magnetic" href="#contact"><span>Contact</span></a>
+      <div class="wrap hero-layout">
+        <div class="hero-intro">
+          <p class="availability hero-stage">Open to internships</p>
+          <p class="eyebrow hero-stage">University of Carthage · FSB · 5th year</p>
+          <h1 id="hero-title" class="hero-stage">Abderrahim Neji</h1>
+          <p class="headline hero-stage">Software &amp; Data Engineering | <span class="accent-word">AI/ML Engineer</span></p>
         </div>
-        <p class="hero-links hero-stage">
-          <a href="https://github.com/AbderrahimNeji" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/abderrahim-neji" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:nejiabderrahim@gmail.com">nejiabderrahim@gmail.com</a>
-        </p>
+        <div class="hero-portrait">
+          <figure class="portrait-frame">
+            <picture>
+              <source srcset="assets/portrait.webp" type="image/webp">
+              <img
+                src="assets/portrait.jpg"
+                alt="Photograph of Abderrahim Neji"
+                width="368"
+                height="460"
+                decoding="async"
+                fetchpriority="high"
+              >
+            </picture>
+          </figure>
+        </div>
+        <div class="hero-body">
+          <p class="lead hero-stage">I build intelligent applications combining machine learning, computer vision, and LLM-powered systems. I connect data, models, and software — a NestJS/Gemini retrieval assistant, PyTorch training with MLflow and DVC, and APIs that take sensors or documents and return a usable result.</p>
+          <div class="actions hero-stage">
+            <a class="btn btn-primary magnetic" href="#projects"><span>Explore projects</span></a>
+            <a class="btn btn-ghost magnetic" href="#contact"><span>Contact</span></a>
+          </div>
+          <p class="hero-links hero-stage">
+            <a href="https://github.com/AbderrahimNeji" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/abderrahim-neji" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="mailto:nejiabderrahim@gmail.com">nejiabderrahim@gmail.com</a>
+          </p>
+        </div>
       </div>
     </section>
 
@@ -110,7 +132,16 @@
       <div class="wrap about-grid">
         <div class="about-copy reveal-clip">
           <p class="eyebrow">Profile</p>
-          <h2 id="about-title">About</h2>
+          <div class="about-heading">
+            <img
+              class="about-portrait"
+              src="assets/portrait.jpg"
+              alt="Photograph of Abderrahim Neji"
+              width="72"
+              height="90"
+            >
+            <h2 id="about-title">About</h2>
+          </div>
           <p>Software and data engineering student in Tunisia, currently in the 5th year at the University of Carthage, Faculty of Sciences of Bizerte. The through-line in my work is the path from raw input to a running service: documents into retrieval, sensor payloads into a prediction API, datasets into a tracked training run.</p>
           <p>I care about the glue — schemas, validation, embeddings stored where the API can query them, and interfaces that actually call the model. I am looking for a PFE internship where that kind of systems work is the job.</p>
         </div>
