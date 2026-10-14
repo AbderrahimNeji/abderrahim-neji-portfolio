@@ -27,7 +27,7 @@ const required = [
   "neural-canvas",
   "prefers-reduced-motion",
   "favicon.svg",
-  "assets/portrait-clean.jpg",
+  "assets/portrait-v3.jpg",
   "Photograph of Abderrahim Neji",
   "hero-layout",
   "hero-portrait",
@@ -105,12 +105,12 @@ if (!css.includes("prefers-reduced-motion")) {
   errors.push("CSS must honor prefers-reduced-motion");
 }
 
-const portrait = "assets/portrait-clean.jpg";
+const portrait = "assets/portrait-v3.jpg";
 const source = "assets/portrait-source.jpg";
-if (!existsSync(portrait) || !existsSync(source) || !existsSync("assets/portrait-clean.webp")) {
-  errors.push("Missing portrait-clean.jpg, portrait-clean.webp, and/or portrait-source.jpg");
-} else if (html.includes("assets/portrait.jpg") || html.includes("assets/portrait.webp")) {
-  errors.push("Hero still references portrait.jpg or portrait.webp");
+if (!existsSync(portrait) || !existsSync(source) || !existsSync("assets/portrait-v3.webp")) {
+  errors.push("Missing portrait-v3.jpg, portrait-v3.webp, and/or portrait-source.jpg");
+} else if (html.includes("assets/portrait.jpg") || html.includes("assets/portrait.webp") || html.includes("portrait-clean")) {
+  errors.push("Hero still references portrait.jpg, portrait.webp, or portrait-clean");
 } else {
   const edited = statSync(portrait).size;
   const original = statSync(source).size;
