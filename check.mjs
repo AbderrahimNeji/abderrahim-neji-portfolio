@@ -27,9 +27,6 @@ const required = [
   "neural-canvas",
   "prefers-reduced-motion",
   "favicon.svg",
-  "Aymen Jeddou",
-  "Mohamed Amine Trabelsi",
-  "besmaguesmi",
   "assets/portrait.jpg",
   "Photograph of Abderrahim Neji",
   "hero-layout",
@@ -50,6 +47,19 @@ const presentForbidden = forbidden.filter((item) =>
   html.toLowerCase().includes(item.toLowerCase())
 );
 
+const otherPeople = [
+  "Aymen Jeddou",
+  "AymenJeddou",
+  "Mohamed Amine Trabelsi",
+  "TrabelsiAmin",
+  "besmaguesmi",
+  "Jeddou",
+  "Trabelsi",
+];
+const namedPeople = otherPeople.filter((name) =>
+  html.toLowerCase().includes(name.toLowerCase())
+);
+
 const palette = [
   "#06080F",
   "#0A101C",
@@ -68,6 +78,7 @@ if (html.includes('href="cv') || html.includes("Download CV")) {
 const errors = [];
 if (missing.length) errors.push("Missing required copy/assets: " + missing.join(", "));
 if (presentForbidden.length) errors.push("Forbidden claims/UI: " + presentForbidden.join(", "));
+if (namedPeople.length) errors.push("Other people named in index.html: " + namedPeople.join(", "));
 if (missingColors.length) errors.push("Missing palette tokens: " + missingColors.join(", "));
 if (!html.includes('id="projects"') || !html.includes('id="skills"') || !html.includes('id="contact"') || !html.includes('id="about"')) {
   errors.push("Missing core section ids");

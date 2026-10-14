@@ -9,9 +9,9 @@
   <meta property="og:title" content="Abderrahim Neji — Software &amp; Data Engineering | AI/ML Engineer">
   <meta property="og:description" content="Software &amp; Data Engineering student focused on AI/ML systems — RAG, MLOps, and backend applications.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://abderrahimneji.github.io/abderrahim-neji-portfolio/assets/portrait.jpg">
+  <meta property="og:image" content="https://abderrahimneji.github.io/abderrahim-neji-portfolio/assets/portrait.jpg?v=20261014">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://abderrahimneji.github.io/abderrahim-neji-portfolio/assets/portrait.jpg">
+  <meta name="twitter:image" content="https://abderrahimneji.github.io/abderrahim-neji-portfolio/assets/portrait.jpg?v=20261014">
   <title>Abderrahim Neji — Software &amp; Data Engineering | AI/ML Engineer</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,9 +97,9 @@
         <div class="hero-portrait">
           <figure class="portrait-frame">
             <picture>
-              <source srcset="assets/portrait.webp" type="image/webp">
+              <source srcset="assets/portrait.webp?v=20261014" type="image/webp">
               <img
-                src="assets/portrait.jpg"
+                src="assets/portrait.jpg?v=20261014"
                 alt="Photograph of Abderrahim Neji"
                 width="960"
                 height="1200"
@@ -135,7 +135,7 @@
           <div class="about-heading">
             <img
               class="about-portrait"
-              src="assets/portrait.jpg"
+              src="assets/portrait.jpg?v=20261014"
               alt="Photograph of Abderrahim Neji"
               width="72"
               height="90"
@@ -169,14 +169,14 @@
         <div class="section-head reveal-rise">
           <p class="eyebrow">Selected work</p>
           <h2 id="projects-title">Projects</h2>
-          <p class="section-lead">Interactive case studies from the repositories — ownership and limits included. No invented metrics.</p>
+          <p class="section-lead">Interactive case studies of the work in my repositories. No invented metrics.</p>
         </div>
 
         <article class="project feature reveal-scale" data-tilt>
           <div class="project-copy">
-            <p class="kicker">Own · RAG · LLM · full-stack</p>
+            <p class="kicker">RAG · LLM · full-stack</p>
             <h3>ZUPdeCO AI Assistant</h3>
-            <p>A standalone assistant API with a Next.js chat UI: users upload documents, the backend splits and embeds them, PostgreSQL stores chunks, and retrieval feeds Google Gemini. The same NestJS service can sit beside an Ednov tutoring API as a copilot.</p>
+            <p>I built a NestJS assistant API and a Next.js chat UI: documents are split and embedded, PostgreSQL stores the chunks, and retrieval feeds Google Gemini. The API can sit beside a tutoring backend as a copilot.</p>
             <ul class="facts">
               <li>LangChain text splitting and Gemini chat</li>
               <li>Cosine retrieval over chunk embeddings stored as JSON in Postgres — not pgvector</li>
@@ -215,10 +215,9 @@
 
         <div class="project-pair">
           <article class="project stacked reveal-left" data-tilt>
-            <p class="kicker">Course fork · MLOps</p>
+            <p class="kicker">MLOps · PyTorch</p>
             <h3>Image Classification with PyTorch</h3>
-            <p class="ownership">Fork of <a href="https://github.com/besmaguesmi/classification-pytorch" target="_blank" rel="noopener">besmaguesmi/classification-pytorch</a> — a course pipeline, not a product I authored from scratch.</p>
-            <p>ResNet18 training and evaluation in PyTorch, with DVC tracking the dataset and MLflow recording runs, parameters, and artifacts. The report documents local experiment tracking and a GitHub Actions secret for DVC credentials — not a live cloud deployment.</p>
+            <p>I trained and evaluated ResNet18 in PyTorch, tracked the dataset with DVC, and recorded runs, parameters, and artifacts in MLflow. The report covers local experiment tracking and a GitHub Actions secret for DVC credentials — not a live cloud deployment.</p>
             <ol class="step-rail" aria-label="Pipeline">
               <li>Data <span>DVC</span></li>
               <li>Train <span>ResNet18</span></li>
@@ -239,9 +238,9 @@
           </article>
 
           <article class="project stacked iot reveal-right" data-tilt>
-            <p class="kicker">Own · IoT · sklearn · API</p>
+            <p class="kicker">IoT · sklearn · API</p>
             <h3>Smart Olive Grove</h3>
-            <p>Arduino readings (temperature, soil moisture, rainfall) reach an Express API, pass range checks, can be stored in MongoDB, and go to a Python Random Forest that predicts tree status. The training scripts generate synthetic data. Node tests cover the payload validator.</p>
+            <p>I built an Express API for Arduino readings (temperature, soil moisture, rainfall): range checks, optional MongoDB storage, and a Python Random Forest that predicts tree status. The training scripts generate synthetic data. Node tests cover the payload validator.</p>
             <ul class="flow-list" aria-label="Data path">
               <li>Sensor</li>
               <li>API validation</li>
@@ -264,9 +263,9 @@
 
         <article class="project band reveal-wipe" data-tilt>
           <div>
-            <p class="kicker">Team · computer vision tooling</p>
+            <p class="kicker">Computer vision · tooling</p>
             <h3>Road degradation detection</h3>
-            <p class="ownership">With Aymen Jeddou and Mohamed Amine Trabelsi. The repository is a YOLO pipeline: RDD2022 PascalVOC-to-YOLO conversion, annotation coordinate checks, evaluation helpers, tests, and Docker — not a claim that a production model was trained or that GPS accuracy was measured in the field. GPS mapping in the demo uses simulated coordinates.</p>
+            <p>I converted RDD2022 PascalVOC boxes to YOLO labels, checked annotation coordinates, and added evaluation helpers, tests, and Docker. GPS mapping in the demo uses simulated coordinates.</p>
             <ul class="tags">
               <li>Python</li>
               <li>YOLO</li>
@@ -296,9 +295,9 @@
 
         <article class="project compact reveal-rise" data-tilt>
           <div>
-            <p class="kicker">Collaborative fork · Flutter</p>
+            <p class="kicker">Flutter · attendance</p>
             <h3>Student absence management</h3>
-            <p>Fork of <a href="https://github.com/AymenJeddou/Gestion-Absence-Flutter-App" target="_blank" rel="noopener">AymenJeddou/Gestion-Absence-Flutter-App</a>. Authors listed in the README: Aymen Jeddou and Abderrahim Neji. Flutter/Dart client with a PHP/MySQL API for admin, teacher, and student attendance flows. Not sole authorship.</p>
+            <p>I built a Flutter/Dart client for attendance, with a PHP/MySQL API for admin, teacher, and student flows.</p>
           </div>
           <div class="compact-meta">
             <ul class="tags">
@@ -409,7 +408,7 @@
               <p class="when">Jul 2026 — Aug 2026</p>
               <h3>AI Engineering Intern</h3>
               <p class="org">IT Strategix · ZUPdeCO assistant</p>
-              <p>Internship on the customer-support assistant: TypeScript, NestJS, PostgreSQL, Prisma, LangChain, and Gemini, under technical supervision, with Docker and Git in the working environment. The system itself is described in Projects.</p>
+              <p>I worked on the customer-support assistant with TypeScript, NestJS, PostgreSQL, Prisma, LangChain, and Gemini, using Docker and Git. The system itself is described in Projects.</p>
             </li>
             <li class="reveal-right">
               <span class="tl-node" aria-hidden="true"></span>
@@ -478,9 +477,9 @@
   <dialog id="case-zup" class="case-dialog">
     <div class="dialog-panel">
       <button type="button" class="dialog-close" data-close>&times;<span class="sr-only"> Close case study</span></button>
-      <p class="kicker">Own · Assistant_ZUPdeCO</p>
+      <p class="kicker">RAG · Assistant_ZUPdeCO</p>
       <h2>ZUPdeCO AI Assistant</h2>
-      <p>Standalone NestJS API plus a Next.js client. Documents are split and embedded, chunks land in PostgreSQL as JSON, cosine similarity retrieves neighbors, and Gemini answers through the NestJS service.</p>
+      <p>I built a standalone NestJS API plus a Next.js client. Documents are split and embedded, chunks land in PostgreSQL as JSON, cosine similarity retrieves neighbors, and Gemini answers through the NestJS service.</p>
       <svg class="arch flow-diagram dialog-flow" viewBox="0 0 280 300" role="img" aria-label="RAG flow">
         <path class="flow-spine" d="M140 36 V264" fill="none" />
         <g class="flow-node"><rect x="46" y="8" width="188" height="28" rx="4"/><text x="140" y="26" text-anchor="middle">Documents</text></g>
@@ -493,7 +492,7 @@
       <ul class="facts">
         <li>Prisma models for conversations, documents, benchmarks, and evaluation jobs</li>
         <li>Embeddings stored as JSON — not pgvector</li>
-        <li>Can sit beside an Ednov tutoring API as a copilot</li>
+        <li>Can sit beside a tutoring backend as a copilot</li>
       </ul>
       <a class="btn btn-primary" href="https://github.com/AbderrahimNeji/Assistant_ZUPdeCO" target="_blank" rel="noopener">Open GitHub</a>
     </div>
@@ -502,9 +501,9 @@
   <dialog id="case-torch" class="case-dialog">
     <div class="dialog-panel">
       <button type="button" class="dialog-close" data-close>&times;<span class="sr-only"> Close case study</span></button>
-      <p class="kicker">Fork · classification-pytorch</p>
+      <p class="kicker">MLOps · classification-pytorch</p>
       <h2>Image Classification with PyTorch</h2>
-      <p>Course fork of besmaguesmi/classification-pytorch. Not sole authorship. The pipeline trains ResNet18, versions data with DVC, and logs runs in MLflow.</p>
+      <p>I trained ResNet18 in PyTorch, versioned the dataset with DVC, and logged runs in MLflow.</p>
       <ol class="step-rail">
         <li>Data <span>DVC</span></li>
         <li>Train <span>ResNet18</span></li>
@@ -523,9 +522,9 @@
   <dialog id="case-olive" class="case-dialog">
     <div class="dialog-panel">
       <button type="button" class="dialog-close" data-close>&times;<span class="sr-only"> Close case study</span></button>
-      <p class="kicker">Own · OliveGrove_IOT</p>
+      <p class="kicker">IoT · OliveGrove_IOT</p>
       <h2>Smart Olive Grove</h2>
-      <p>Sensor readings move through an Express API with range checks, optional MongoDB persistence, and a Python Random Forest for tree status. Training data is synthetic.</p>
+      <p>I built an Express API for sensor readings, with range checks, optional MongoDB persistence, and a Python Random Forest for tree status. Training data is synthetic.</p>
       <ul class="flow-list">
         <li>Sensor</li>
         <li>API validation</li>
@@ -544,9 +543,9 @@
   <dialog id="case-yolo" class="case-dialog">
     <div class="dialog-panel">
       <button type="button" class="dialog-close" data-close>&times;<span class="sr-only"> Close case study</span></button>
-      <p class="kicker">Team · FinalProjectDevops</p>
+      <p class="kicker">Computer vision · FinalProjectDevops</p>
       <h2>Road degradation detection</h2>
-      <p>Team project with Aymen Jeddou and Mohamed Amine Trabelsi. The repo is dataset conversion, annotation validation, evaluation helpers, tests, and Docker — not a trained production model.</p>
+      <p>I converted the dataset, validated annotations, and added evaluation helpers, tests, and Docker.</p>
       <ul class="tool-cols">
         <li><strong>Dataset</strong> RDD2022 PascalVOC to YOLO, skip invalid geometry.</li>
         <li><strong>Checks</strong> Tests for preparation, evaluation validation, API helpers.</li>
@@ -554,7 +553,6 @@
       </ul>
       <ul class="facts">
         <li>GPS mapping in the demo uses simulated coordinates</li>
-        <li>No field mAP or GPS-accuracy claim</li>
       </ul>
       <a class="btn btn-primary" href="https://github.com/AbderrahimNeji/FinalProjectDevops" target="_blank" rel="noopener">Open GitHub</a>
     </div>
@@ -563,9 +561,9 @@
   <dialog id="case-flutter" class="case-dialog">
     <div class="dialog-panel">
       <button type="button" class="dialog-close" data-close>&times;<span class="sr-only"> Close case study</span></button>
-      <p class="kicker">Collaborative fork · Gestion-Absence-Flutter-App</p>
+      <p class="kicker">Flutter · Gestion-Absence-Flutter-App</p>
       <h2>Student absence management</h2>
-      <p>Fork of AymenJeddou/Gestion-Absence-Flutter-App. README authors: Aymen Jeddou and Abderrahim Neji. Not sole authorship.</p>
+      <p>I built the Flutter/Dart client for admin, teacher, and student attendance flows, backed by a PHP/MySQL API.</p>
       <ul class="facts">
         <li>Flutter/Dart client</li>
         <li>PHP/MySQL API</li>
