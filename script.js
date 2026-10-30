@@ -110,11 +110,94 @@
     for (var s = 0; s < nodes.length; s++) nodes[s].classList.add("is-in");
   }, 2500);
 
+  initDecode();
+  initRotator();
+
   if (finePointer) {
     initPointer();
     initMagnetic();
     initTilt();
     initParallax();
+  }
+
+  function initDecode() {
+    var title = document.getElementById("hero-title");
+    if (!title) return;
+    var finalText = title.textContent;
+    var glyphs = "01<>/{}[]#*+=ABCDEFX";
+    var duration = 1100;
+    var start = null;
+    var done = false;
+    title.setAttribute("aria-label", finalText);
+    var sizer = document.createElement("span");
+    sizer.className = "decode-sizer";
+    sizer.setAttribute("aria-hidden", "true");
+    sizer.textContent = finalText;
+    var shown = document.createElement("span");
+    shown.className = "decode-layer";
+    shown.setAttribute("aria-hidden", "true");
+    title.textContent = "";
+    title.appendChild(sizer);
+    title.appendChild(shown);
+
+    function finish() {
+      if (done) return;
+      done = true;
+      title.textContent = finalText;
+      title.removeAttribute("aria-label");
+    }
+
+    function frame(now) {
+      if (done) return;
+      if (start === null) start = now;
+      var progress = Math.min((now - start) / duration, 1);
+      var settled = Math.floor(progress * finalText.length);
+      var out = "";
+      for (var i = 0; i < finalText.length; i++) {
+        var ch = finalText.charAt(i);
+        if (i < settled || ch === " ") out += ch;
+        else out += glyphs.charAt(Math.floor(Math.random() * glyphs.length));
+      }
+      shown.textContent = out;
+      if (progress < 1) requestAnimationFrame(frame);
+      else finish();
+    }
+    requestAnimationFrame(frame);
+    // rAF pauses in background tabs; never leave the name scrambled.
+    window.setTimeout(finish, duration + 400);
+  }
+
+  function initRotator() {
+    var el = document.querySelector(".accent-word[data-rotate]");
+    if (!el) return;
+    var words = el.getAttribute("data-rotate").split("|");
+    var index = 0;
+    var text = words[0];
+    el.classList.add("is-typing");
+
+    function erase() {
+      if (text.length) {
+        text = text.slice(0, -1);
+        el.textContent = text;
+        window.setTimeout(erase, 35);
+      } else {
+        index = (index + 1) % words.length;
+        window.setTimeout(type, 250);
+      }
+    }
+
+    function type() {
+      var target = words[index];
+      if (text.length < target.length) {
+        text = target.slice(0, text.length + 1);
+        el.textContent = text;
+        window.setTimeout(type, 70);
+      } else {
+        window.setTimeout(erase, 2600);
+      }
+    }
+
+    window.setTimeout(erase, 3200);
   }
 
   function initPointer() {
@@ -179,6 +262,8 @@
           var py = (event.clientY - rect.top) / rect.height - 0.5;
           card.style.transform =
             "perspective(900px) rotateX(" + (-py * 5).toFixed(2) + "deg) rotateY(" + (px * 6).toFixed(2) + "deg)";
+          card.style.setProperty("--mx", (event.clientX - rect.left) + "px");
+          card.style.setProperty("--my", (event.clientY - rect.top) + "px");
         });
         card.addEventListener("mouseleave", function () {
           card.style.transform = "";
